@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="日本語" />
+	</tags>
+	<strings>
+		<string id="CQTGS_THXRbXba" text="クエストを完了してスキルを獲得する" />
+		<string id="CQTGS_CWJ2Qq7o" text="メイン設定" />
+		<string id="CQTGS_gz6KzX0w" text="制限を超えるスキルを除外する" />
+		<string id="CQTGS_7ITa6UqH" text="以下のスライダー値を使用して、特定のレベルを超えるスキルをランダム選択から除外するかどうかを切り替えます。[デフォルト: 無効]" />
+		<string id="CQTGS_DjNHBZmC" text="スキルレベルの制限" />
+		<string id="CQTGS_tJVNwaoT" text="ランダム選択に含めるスキルの最大レベルを設定します。[デフォルト: 300]" />
+		<string id="CQTGS_NK5OQ7Tl" text="重み付け指数" />
+		<string id="CQTGS_JD4o4eBb" text="低レベルのスキルが増加する可能性をどの程度高くするかを制御します。値が高いほど低レベルのスキルが増加しやすくなり、値が0の場合はすべてのスキルが同じ確率で増加します。[デフォルト: 1.0]" />
+		<string id="CQTGS_EkjJT9pW" text="スキル増加通知" />
+		<string id="CQTGS_9gBjEs7r" text="クエスト完了後のスキル増加通知。[デフォルト: 有効]" />
+		<string id="CQTGS_OwsWuWum" text="技術設定" />
+		<string id="CQTGS_hCh6K70k" text="デバッグ用ログ" />
+		<string id="CQTGS_KcYHRAqu" text="デバッグ用ログ（英語のみ）。[デフォルト: 無効]" />
+		<string id="CQTGS_edy4tT9Y" text="クエストを完了した後、パーティーのスキルが向上しました:" />
+		<string id="CQTGS_KKJcr64D" text="" />
+		<string id="CQTGS_dbd4Linv" text="" />
+		<string id="CQTGS_NduAIcGX" text="" />
+		<string id="CQTGS_n7jqhomx" text="" />
+		<string id="CQTGS_b37gPqI2" text="" />
+		<string id="CQTGS_K2yEpfIS" text="" />
+		<string id="CQTGS_EAcfbmna" text="" />
+		<string id="CQTGS_mzNNouaA" text="" />
+		<string id="CQTGS_z3lgzO2X" text="" />
+		<string id="CQTGS_K861rhZ2" text="" />
+		<string id="CQTGS_g0cOXGF9" text="" />
+		<string id="CQTGS_umkoP1ip" text="" />
+		<string id="CQTGS_iIchpQsl" text="" />
+		<string id="CQTGS_SeUSxoJv" text="" />
+		<string id="CQTGS_s8IN1IMA" text="" />
+		<string id="CQTGS_wpMWSUT6" text="" />
+	</strings>
+</base>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Français" />
+	</tags>
+	<strings>
+		<string id="CQTGS_THXRbXba" text="Complétez des quêtes pour gagner des compétences" />
+		<string id="CQTGS_CWJ2Qq7o" text="Paramètres principaux" />
+		<string id="CQTGS_gz6KzX0w" text="Exclure les compétences au-dessus de la limite" />
+		<string id="CQTGS_7ITa6UqH" text="Activez ou désactivez l'exclusion des compétences au-dessus d'un certain niveau à l'aide de la valeur du curseur ci-dessous. [Par défaut : désactivé]" />
+		<string id="CQTGS_DjNHBZmC" text="Limite de niveau de compétence" />
+		<string id="CQTGS_tJVNwaoT" text="Définissez le niveau de compétence maximum pour inclure les compétences dans la sélection aléatoire. [Par défaut : 300]" />
+		<string id="CQTGS_NK5OQ7Tl" text="Exposant de pondération" />
+		<string id="CQTGS_JD4o4eBb" text="Contrôle la probabilité que les compétences de bas niveau augmentent. Des valeurs plus élevées rendent les compétences de bas niveau plus susceptibles d'augmenter, tandis qu'une valeur de 0 donne à toutes les compétences une chance égale d'augmenter. [Par défaut : 1.0]" />
+		<string id="CQTGS_EkjJT9pW" text="Notifications d'augmentation de compétences" />
+		<string id="CQTGS_9gBjEs7r" text="Notifications pour les augmentations de compétences après la fin d'une quête. [Par défaut : activé]" />
+		<string id="CQTGS_OwsWuWum" text="Paramètres techniques" />
+		<string id="CQTGS_hCh6K70k" text="Journalisation pour le débogage" />
+		<string id="CQTGS_KcYHRAqu" text="Journalisation pour le débogage (anglais uniquement). [Par défaut : désactivé]" />
+		<string id="CQTGS_edy4tT9Y" text="Après avoir terminé la quête, votre groupe a amélioré ses compétences :" />
+		<string id="CQTGS_KKJcr64D" text="" />
+		<string id="CQTGS_dbd4Linv" text="" />
+		<string id="CQTGS_NduAIcGX" text="" />
+		<string id="CQTGS_n7jqhomx" text="" />
+		<string id="CQTGS_b37gPqI2" text="" />
+		<string id="CQTGS_K2yEpfIS" text="" />
+		<string id="CQTGS_EAcfbmna" text="" />
+		<string id="CQTGS_mzNNouaA" text="" />
+		<string id="CQTGS_z3lgzO2X" text="" />
+		<string id="CQTGS_K861rhZ2" text="" />
+		<string id="CQTGS_g0cOXGF9" text="" />
+		<string id="CQTGS_umkoP1ip" text="" />
+		<string id="CQTGS_iIchpQsl" text="" />
+		<string id="CQTGS_SeUSxoJv" text="" />
+		<string id="CQTGS_s8IN1IMA" text="" />
+		<string id="CQTGS_wpMWSUT6" text="" />
+	</strings>
+</base>

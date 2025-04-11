@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="简体中文" />
+	</tags>
+	<strings>
+		<string id="CQTGS_THXRbXba" text="完成任务获得技能" />
+		<string id="CQTGS_CWJ2Qq7o" text="主要设置" />
+		<string id="CQTGS_gz6KzX0w" text="排除超出限制的技能" />
+		<string id="CQTGS_7ITa6UqH" text="使用下方滑块值，开启/关闭从随机选择中排除特定等级以上的技能。[默认：禁用]" />
+		<string id="CQTGS_DjNHBZmC" text="技能等级限制" />
+		<string id="CQTGS_tJVNwaoT" text="设置随机选择的技能的最高等级。[默认值：300]" />
+		<string id="CQTGS_NK5OQ7Tl" text="权重指数" />
+		<string id="CQTGS_JD4o4eBb" text="控制低级技能提升的概率。数值越高，低级技能提升的概率就越大，而数值为 0 时，所有技能提升的概率均等。[默认值：1.0]" />
+		<string id="CQTGS_EkjJT9pW" text="技能提升通知" />
+		<string id="CQTGS_9gBjEs7r" text="任务完成后，技能提升通知。[默认：启用]" />
+		<string id="CQTGS_OwsWuWum" text="技术设置" />
+		<string id="CQTGS_hCh6K70k" text="用于调试的日志记录" />
+		<string id="CQTGS_KcYHRAqu" text="调试日志记录（仅限英文）。[默认：禁用]" />
+		<string id="CQTGS_edy4tT9Y" text="完成任务后，你的队伍提升了他们的技能：" />
+		<string id="CQTGS_KKJcr64D" text="" />
+		<string id="CQTGS_dbd4Linv" text="" />
+		<string id="CQTGS_NduAIcGX" text="" />
+		<string id="CQTGS_n7jqhomx" text="" />
+		<string id="CQTGS_b37gPqI2" text="" />
+		<string id="CQTGS_K2yEpfIS" text="" />
+		<string id="CQTGS_EAcfbmna" text="" />
+		<string id="CQTGS_mzNNouaA" text="" />
+		<string id="CQTGS_z3lgzO2X" text="" />
+		<string id="CQTGS_K861rhZ2" text="" />
+		<string id="CQTGS_g0cOXGF9" text="" />
+		<string id="CQTGS_umkoP1ip" text="" />
+		<string id="CQTGS_iIchpQsl" text="" />
+		<string id="CQTGS_SeUSxoJv" text="" />
+		<string id="CQTGS_s8IN1IMA" text="" />
+		<string id="CQTGS_wpMWSUT6" text="" />
+	</strings>
+</base>

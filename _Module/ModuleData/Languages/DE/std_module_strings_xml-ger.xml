@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Deutsch" />
+	</tags>
+	<strings>
+		<string id="CQTGS_THXRbXba" text="Abschließen von Quests, um Fähigkeiten zu verbessern" />
+		<string id="CQTGS_CWJ2Qq7o" text="Haupteinstellungen" />
+		<string id="CQTGS_gz6KzX0w" text="Fähigkeiten über dem Limit ausschließen" />
+		<string id="CQTGS_7ITa6UqH" text="Umschalten, um Fähigkeiten über einem bestimmten Level von der zufälligen Auswahl auszuschließen, indem der untenstehende Schieberegler verwendet wird. [Standard: deaktiviert]" />
+		<string id="CQTGS_DjNHBZmC" text="Fähigkeitslevel-Limit" />
+		<string id="CQTGS_tJVNwaoT" text="Legen Sie das maximale Fähigkeitslevel fest, das in die zufällige Auswahl einbezogen wird. [Standard: 300]" />
+		<string id="CQTGS_NK5OQ7Tl" text="Gewichtungs-Exponent" />
+		<string id="CQTGS_JD4o4eBb" text="Steuert, wie viel wahrscheinlicher niedrigstufige Fähigkeiten erhöht werden. Höhere Werte machen niedrigstufige Fähigkeiten wahrscheinlicher, während ein Wert von 0 allen Fähigkeiten die gleiche Chance gibt, erhöht zu werden. [Standard: 1.0]" />
+		<string id="CQTGS_EkjJT9pW" text="Benachrichtigungen über Fähigkeitssteigerungen" />
+		<string id="CQTGS_9gBjEs7r" text="Benachrichtigungen über Fähigkeitssteigerungen nach Abschluss einer Quest. [Standard: aktiviert]" />
+		<string id="CQTGS_OwsWuWum" text="Technische Einstellungen" />
+		<string id="CQTGS_hCh6K70k" text="Protokollierung für Debugging" />
+		<string id="CQTGS_KcYHRAqu" text="Protokollierung für Debugging (nur Englisch). [Standard: deaktiviert]" />
+		<string id="CQTGS_edy4tT9Y" text="Nach Abschluss der Quest hat Ihre Gruppe ihre Fähigkeiten verbessert:" />
+		<string id="CQTGS_KKJcr64D" text="" />
+		<string id="CQTGS_dbd4Linv" text="" />
+		<string id="CQTGS_NduAIcGX" text="" />
+		<string id="CQTGS_n7jqhomx" text="" />
+		<string id="CQTGS_b37gPqI2" text="" />
+		<string id="CQTGS_K2yEpfIS" text="" />
+		<string id="CQTGS_EAcfbmna" text="" />
+		<string id="CQTGS_mzNNouaA" text="" />
+		<string id="CQTGS_z3lgzO2X" text="" />
+		<string id="CQTGS_K861rhZ2" text="" />
+		<string id="CQTGS_g0cOXGF9" text="" />
+		<string id="CQTGS_umkoP1ip" text="" />
+		<string id="CQTGS_iIchpQsl" text="" />
+		<string id="CQTGS_SeUSxoJv" text="" />
+		<string id="CQTGS_s8IN1IMA" text="" />
+		<string id="CQTGS_wpMWSUT6" text="" />
+	</strings>
+</base>
