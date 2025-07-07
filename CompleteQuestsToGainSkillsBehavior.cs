@@ -36,9 +36,7 @@ namespace CompleteQuestsToGainSkills
                         SkillObject skill = GetRandomSkillBasedOnLevel(hero, random, settings.WeightExponent);
 
                         if (skill != null)
-                        {
                             IncreaseHeroSkill(hero, skill);
-                        }
                     }
                 }
             }
@@ -80,6 +78,13 @@ namespace CompleteQuestsToGainSkills
                 double weight = Math.Max(1, 200 / Math.Pow(Math.Log(skillLevel + 1), exponent));
                 skillWeights.Add((skill, weight));
                 totalWeight += weight;
+            }
+
+            if (skillWeights.Count == 0)
+            {
+                if (settings.LoggingEnabled)
+                    InformationManager.DisplayMessage(new InformationMessage("No eligible skills found for selection."));
+                return null;
             }
 
             skillWeights.Sort((x, y) => y.weight.CompareTo(x.weight));
