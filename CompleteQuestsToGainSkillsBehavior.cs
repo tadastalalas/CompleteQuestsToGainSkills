@@ -124,6 +124,9 @@ namespace CompleteQuestsToGainSkills
 
         private void IncreaseHeroSkill(Hero hero, SkillObject skill)
         {
+            if (hero?.HeroDeveloper == null || skill == null || Campaign.Current?.Models?.CharacterDevelopmentModel == null)
+                return;
+
             int expNeededForFullSkillLevel = Campaign.Current.Models.CharacterDevelopmentModel.GetXpAmountForSkillLevelChange(hero, skill, 1);
 
             if (settings.NotificationsEnabled)
