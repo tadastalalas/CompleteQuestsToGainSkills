@@ -127,6 +127,9 @@ namespace CompleteQuestsToGainSkills
             if (hero?.HeroDeveloper == null || skill == null || Campaign.Current?.Models?.CharacterDevelopmentModel == null)
                 return;
 
+            if (hero.PartyBelongedTo == null || hero.IsDead || !hero.IsActive)
+                return;
+
             int expNeededForFullSkillLevel = Campaign.Current.Models.CharacterDevelopmentModel.GetXpAmountForSkillLevelChange(hero, skill, 1);
 
             if (settings.NotificationsEnabled)
