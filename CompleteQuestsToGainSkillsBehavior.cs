@@ -124,7 +124,7 @@ namespace CompleteQuestsToGainSkills
 
         private void IncreaseHeroSkill(Hero hero, SkillObject skill)
         {
-            if (hero?.HeroDeveloper == null || skill == null || Campaign.Current?.Models?.CharacterDevelopmentModel == null)
+            if (hero == null || hero?.HeroDeveloper == null || skill == null || Campaign.Current?.Models?.CharacterDevelopmentModel == null)
                 return;
 
             if (hero.PartyBelongedTo == null || hero.IsDead || !hero.IsActive)
