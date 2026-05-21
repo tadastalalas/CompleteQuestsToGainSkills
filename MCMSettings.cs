@@ -35,7 +35,6 @@ namespace CompleteQuestsToGainSkills
         [SettingPropertyGroup("{=CQTGS_CWJ2Qq7o}Main settings", GroupOrder = 0)]
         public bool NotificationsEnabled { get; set; } = true;
 
-
         [SettingPropertyBool("{=CQTGS_hCh6K70k}Logging for debugging", Order = 0, RequireRestart = false, HintText = "{=CQTGS_KcYHRAqu}Logging for debugging (English only). [Default: disabled]")]
         [SettingPropertyGroup("{=CQTGS_OwsWuWum}Technical settings", GroupOrder = 1)]
         public bool LoggingEnabled { get; set; } = false;

@@ -36,7 +36,7 @@ namespace CompleteQuestsToGainSkills
         public override void OnGameEnd(Game game)
         {
             var eventField = typeof(CampaignEvents).GetField("OnQuestCompletedEvent", BindingFlags.Static | BindingFlags.NonPublic);
-            var eventDelegate = (MulticastDelegate)eventField?.GetValue(null);
+            MulticastDelegate? eventDelegate = eventField?.GetValue(null) as MulticastDelegate;
             if (eventDelegate != null && eventDelegate.GetInvocationList().Length > 0)
             {
                 CampaignEvents.OnQuestCompletedEvent.ClearListeners(this);
