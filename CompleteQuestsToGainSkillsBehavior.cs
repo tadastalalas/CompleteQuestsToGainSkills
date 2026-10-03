@@ -5,44 +5,56 @@ using TaleWorlds.Library;
 using System.Collections.Generic;
 using TaleWorlds.CampaignSystem.Roster;
 using MCM.Abstractions.Base.Global;
+using TaleWorlds.CampaignSystem.Issues;
 using TaleWorlds.Localization;
 
 namespace CompleteQuestsToGainSkills
 {
     public class CompleteQuestsToGainSkillsBehavior : CampaignBehaviorBase
     {
-        private static readonly MCMSettings settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
+        private static MCMSettings? _fallback;
+        private static MCMSettings settings => AttributeGlobalSettings<MCMSettings>.Instance ?? (_fallback ??= new MCMSettings());
 
         public override void RegisterEvents()
         {
             CampaignEvents.OnQuestCompletedEvent.AddNonSerializedListener(this, OnQuestCompleted);
+            CampaignEvents.OnIssueUpdatedEvent.AddNonSerializedListener(this, OnIssueUpdated);
         }
 
         private void OnQuestCompleted(QuestBase quest, QuestBase.QuestCompleteDetails detail)
         {
-            var listOfHeroes = ListOfHeroesInParty(Hero.MainHero);
-
-            if (detail == QuestBase.QuestCompleteDetails.Success)
+            if (detail != QuestBase.QuestCompleteDetails.Success) return;
+            Random random = new Random();
+            bool any = false;
+            foreach (Hero hero in ListOfHeroesInParty(Hero.MainHero))
             {
-                Random random = new Random();
-
-                if (settings.NotificationsEnabled)
-                    InformationManager.DisplayMessage(new InformationMessage(new TextObject("{=CQTGS_edy4tT9Y}After completing the quest, your party improved their skills:").ToString(), Colors.Yellow));
-
-                foreach (var hero in listOfHeroes)
+                SkillObject skill = GetRandomSkillBasedOnLevel(hero, random, settings.WeightExponent);
+                if (skill == null) continue;
+                if (!any && settings.NotificationsEnabled)
                 {
-                    if (hero != null)
-                    {
-                        SkillObject skill = GetRandomSkillBasedOnLevel(hero, random, settings.WeightExponent);
-
-                        if (skill != null)
-                            IncreaseHeroSkill(hero, skill);
-                    }
+                    InformationManager.DisplayMessage(new InformationMessage(new TextObject("{=CQTGS_edy4tT9Y}After completing the quest, your party improved their skills:").ToString(), Colors.Yellow));
+                    any = true;
                 }
+                IncreaseHeroSkill(hero, skill, settings.NotificationsEnabled);
+            }
+        }
+        
+        private void OnIssueUpdated(IssueBase issue, IssueBase.IssueUpdateDetails details, Hero issueSolver)
+        {
+            if (details != IssueBase.IssueUpdateDetails.IssueFinishedByAILord || issueSolver == null || issueSolver == Hero.MainHero || issueSolver.Clan == Clan.PlayerClan)
+                return;
+
+            Random random = new Random();
+            List<Hero> heroes = ListOfHeroesInParty(issueSolver);
+            for (int i = 0; i < heroes.Count; i++)
+            {
+                SkillObject skill = GetRandomSkillBasedOnLevel(heroes[i], random, settings.WeightExponent, false);
+                if (skill != null)
+                    IncreaseHeroSkill(heroes[i], skill, false);
             }
         }
 
-        private SkillObject GetRandomSkillBasedOnLevel(Hero hero, Random random, double exponent = 1.0)
+        private SkillObject GetRandomSkillBasedOnLevel(Hero hero, Random random, double exponent = 1.0, bool log = true)
         {
             List<SkillObject> skills = new List<SkillObject>
             {
@@ -82,14 +94,14 @@ namespace CompleteQuestsToGainSkills
 
             if (skillWeights.Count == 0)
             {
-                if (settings.LoggingEnabled)
+                if (log && settings.LoggingEnabled)
                     InformationManager.DisplayMessage(new InformationMessage("No eligible skills found for selection."));
                 return null;
             }
 
             skillWeights.Sort((x, y) => y.weight.CompareTo(x.weight));
 
-            if (settings.LoggingEnabled)
+            if (log && settings.LoggingEnabled)
             {
                 foreach (var skillWeight in skillWeights)
                 {
@@ -100,7 +112,7 @@ namespace CompleteQuestsToGainSkills
 
             double randomValue = random.NextDouble() * totalWeight;
 
-            if (settings.LoggingEnabled)
+            if (log && settings.LoggingEnabled)
                 InformationManager.DisplayMessage(new InformationMessage($"Random Value: {randomValue}"));
 
             double cumulativeWeight = 0;
@@ -109,33 +121,28 @@ namespace CompleteQuestsToGainSkills
                 cumulativeWeight += skillWeight.weight;
                 if (randomValue < cumulativeWeight)
                 {
-                    if (settings.LoggingEnabled)
+                    if (log && settings.LoggingEnabled)
                         InformationManager.DisplayMessage(new InformationMessage($"Selected Skill: {skillWeight.skill.Name}"));
 
                     return skillWeight.skill;
                 }
             }
 
-            if (settings.LoggingEnabled)
+            if (log && settings.LoggingEnabled)
                 InformationManager.DisplayMessage(new InformationMessage($"Fallback Selected Skill: {skillWeights[skillWeights.Count - 1].skill.Name}"));
 
             return skillWeights[skillWeights.Count - 1].skill;
         }
 
-        private void IncreaseHeroSkill(Hero hero, SkillObject skill)
+        private void IncreaseHeroSkill(Hero hero, SkillObject skill, bool notify)
         {
-            if (hero == null || hero?.HeroDeveloper == null || skill == null || Campaign.Current?.Models?.CharacterDevelopmentModel == null)
+            if (hero?.HeroDeveloper == null || skill == null)
                 return;
 
             if (hero.PartyBelongedTo == null || hero.IsDead || !hero.IsActive)
                 return;
 
-            int expNeededForFullSkillLevel = Campaign.Current.Models.CharacterDevelopmentModel.GetXpAmountForSkillLevelChange(hero, skill, 1);
-
-            if (settings.NotificationsEnabled)
-                hero.HeroDeveloper.AddSkillXp(skill, expNeededForFullSkillLevel, false, true);
-            else
-                hero.HeroDeveloper.AddSkillXp(skill, expNeededForFullSkillLevel, false, false);
+            hero.HeroDeveloper.ChangeSkillLevel(skill, 1, notify);
         }
 
         public static List<Hero> ListOfHeroesInParty(Hero hero)
